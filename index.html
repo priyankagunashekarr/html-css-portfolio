@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flying Indian Flag</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Flag Pole */
+    .pole {
+      width: 10px;
+      height: 250px;
+      background: #555;
+      margin-right: 10px;
+    }
+
+    /* Flag */
+    .flag {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      height: 180px;
+      animation: wave 2s infinite ease-in-out;
+      transform-origin: left center;
+    }
+
+    .stripe {
+      height: 33.33%;
+      width: 100%;
+    }
+
+    .saffron {
+      background: #FF9933;
+    }
+
+    .white {
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .green {
+      background: #138808;
+    }
+
+    /* Chakra */
+    .chakra {
+      width: 60px;
+      height: 60px;
+      border: 2px solid #000080;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .spoke {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 60px;
+      background: #000080;
+      transform-origin: center;
+    }
+
+    /* Create 24 spokes */
+    .chakra .spoke:nth-child(n) {
+      transform: translate(-50%, -50%) rotate(calc(15deg * (var(--i))));
+    }
+
+    /* Waving effect */
+    @keyframes wave {
+      0% { transform: rotate(0deg) skewY(0deg); }
+      25% { transform: rotate(1deg) skewY(2deg); }
+      50% { transform: rotate(0deg) skewY(0deg); }
+      75% { transform: rotate(-1deg) skewY(-2deg); }
+      100% { transform: rotate(0deg) skewY(0deg); }
+    }
+
+    /* Text Styling */
+    .text {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .text span {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      background: linear-gradient(to right, #FF9933, white, #138808);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff; }
+      to { text-shadow: 0 0 20px #FF9933, 0 0 30px #138808; }
+    }
+  </style>
+</head>
+<body>
+  <div style="display:flex; align-items:center;">
+    <div class="pole"></div>
+    <div class="flag">
+      <div class="stripe saffron"></div>
+      <div class="stripe white">
+        <div class="chakra">
+          <!-- Generate 24 spokes -->
+          <div class="spoke" style="--i:0;"></div>
+          <div class="spoke" style="--i:1;"></div>
+          <div class="spoke" style="--i:2;"></div>
+          <div class="spoke" style="--i:3;"></div>
+          <div class="spoke" style="--i:4;"></div>
+          <div class="spoke" style="--i:5;"></div>
+          <div class="spoke" style="--i:6;"></div>
+          <div class="spoke" style="--i:7;"></div>
+          <div class="spoke" style="--i:8;"></div>
+          <div class="spoke" style="--i:9;"></div>
+          <div class="spoke" style="--i:10;"></div>
+          <div class="spoke" style="--i:11;"></div>
+          <div class="spoke" style="--i:12;"></div>
+          <div class="spoke" style="--i:13;"></div>
+          <div class="spoke" style="--i:14;"></div>
+          <div class="spoke" style="--i:15;"></div>
+          <div class="spoke" style="--i:16;"></div>
+          <div class="spoke" style="--i:17;"></div>
+          <div class="spoke" style="--i:18;"></div>
+          <div class="spoke" style="--i:19;"></div>
+          <div class="spoke" style="--i:20;"></div>
+          <div class="spoke" style="--i:21;"></div>
+          <div class="spoke" style="--i:22;"></div>
+          <div class="spoke" style="--i:23;"></div>
+        </div>
+      </div>
+      <div class="stripe green"></div>
+    </div>
+  </div>
+
+  <!-- Patriotic Text -->
+  <div class="text">
+    Proud to be an <span>INDIAN </span>
+    <br>
+    <small>"One Nation, One Heart, One Flag"</small>
+  </div>
+</body>
+</html>
